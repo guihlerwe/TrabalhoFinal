@@ -43,7 +43,7 @@ public class DAORevisao {
             e.printStackTrace();
             em.getTransaction().rollback();
             return false;
-        } 
+        }
     }
 
     public boolean excluir(Revisao r) {
@@ -56,27 +56,32 @@ public class DAORevisao {
             e.printStackTrace();
             em.getTransaction().rollback();
             return false;
-        } 
+        }
     }
 
-    public List<Revisao> listar(Automovel a) {
-        Query consulta = em.createQuery("select r from Revisao r where r.automovel=:n");
-        consulta.setParameter("n", a);
+    public List<Revisao> listar() {
+        Query consulta = em.createQuery("select r from Revisao r ");
         return consulta.getResultList();
     }
-    
-    public Revisao ultimaRevisao(Automovel a){
-        try{
-        Query consulta =em.createQuery("select r from Revisao r where r.idautomovel :n");
-        consulta.setParameter("a", a);
-        consulta.setMaxResults(1);
-     
-        return (Revisao) consulta.getSingleResult();
-        } catch (NoResultException e){
+
+    public List<Revisao> listar(String placa) {
+        Query consulta = em.createQuery("select r from Revisao r where r.idautomovel.placa=:n");
+        consulta.setParameter("n", placa);
+        return consulta.getResultList();
+    }
+
+    public Revisao ultimaRevisao(Automovel a) {
+        try {
+            Query consulta = em.createQuery("select r from Revisao r where r.idautomovel =:n");
+            consulta.setParameter("n", a);
+            consulta.setMaxResults(1);
+
+            return (Revisao) consulta.getSingleResult();
+        } catch (NoResultException e) {
             return null;
-            
+
         }
-        
+
     }
 
 }

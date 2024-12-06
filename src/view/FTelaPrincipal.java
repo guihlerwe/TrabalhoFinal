@@ -34,6 +34,7 @@ public class FTelaPrincipal extends javax.swing.JFrame {
         menuu = new javax.swing.JMenu();
         miConsCliente = new javax.swing.JMenuItem();
         miConsAutomovel = new javax.swing.JMenuItem();
+        miConsRevisao = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Automobile");
@@ -63,6 +64,9 @@ public class FTelaPrincipal extends javax.swing.JFrame {
 
         miConsAutomovel.setText("Automovel");
         menuu.add(miConsAutomovel);
+
+        miConsRevisao.setText("Revisao");
+        menuu.add(miConsRevisao);
 
         jMenuBar1.add(menuu);
 
@@ -101,5 +105,6 @@ public class FTelaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenuItem miCadRevisao;
     public javax.swing.JMenuItem miConsAutomovel;
     public javax.swing.JMenuItem miConsCliente;
+    public javax.swing.JMenuItem miConsRevisao;
     // End of variables declaration//GEN-END:variables
 }

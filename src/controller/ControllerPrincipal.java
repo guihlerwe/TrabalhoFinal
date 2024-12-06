@@ -7,6 +7,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import javax.swing.Action;
 import view.FTelaPrincipal;
 
 /**
@@ -52,12 +53,6 @@ public class ControllerPrincipal {
                 abrirTelaCadastroRevisao();
             }
         });
-        /*fPrincipal.miConsAutomovel.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                abrirTelaConsultaAutomovel();
-            }
-        });*/
         fPrincipal.miConsCliente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,6 +63,12 @@ public class ControllerPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 abrirTelaConsultaAutomovel();
+            }
+        });
+        fPrincipal.miConsRevisao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                abrirTelaConsultaRevisao();
             }
         });
 
@@ -91,6 +92,11 @@ public class ControllerPrincipal {
 
     public void abrirTelaConsultaCliente() {
         cliente.consultarCliente();
+    }
+
+    public void abrirTelaConsultaRevisao() {
+        revisao.consultarRevisao();
+
     }
 
 }
